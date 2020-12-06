@@ -230,6 +230,9 @@
 				0A14E47C25745B270064A7A5 /* Position.swift */,
 				0A7FDE62257992710046D8CA /* Distance.swift */,
 				0A7FDE4C2577B4BF0046D8CA /* Direction.swift */,
+				0A7FDEA1257B08510046D8CA /* Line_.swift */,
+				0A7FDEAD257B0B670046D8CA /* Plane_.swift */,
+				0A7FDEB7257D380F0046D8CA /* LineSegment_.swift */,
 				016FAB4521BFE7C100AF60DC /* Utilities.swift */,
 				016FAB4321BFE7C100AF60DC /* Vector.swift */,
 				016FAB4621BFE7C100AF60DC /* Vertex.swift */,
@@ -250,9 +253,6 @@
 				01BA29702235A63F0088D36B /* CoreText.swift */,
 				016FAB2C21BFE78100AF60DC /* Euclid.h */,
 				016FAB2D21BFE78100AF60DC /* Info.plist */,
-				0A7FDEA1257B08510046D8CA /* Line_.swift */,
-				0A7FDEAD257B0B670046D8CA /* Plane_.swift */,
-				0A7FDEB7257D380F0046D8CA /* LineSegment_.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -264,6 +264,9 @@
 				0A445EBE2577AE0500DE4497 /* PositionTests.swift */,
 				0A445ECB2577B38A00DE4497 /* DirectionTests.swift */,
 				0A7FDE5E2579925A0046D8CA /* DistanceTests.swift */,
+				0A7FDEA5257B087B0046D8CA /* LineTests_.swift */,
+				0A7FDEA9257B0B5B0046D8CA /* PlaneTests_.swift */,
+				0A7FDEBB257D38F60046D8CA /* LineSegmentTests_.swift */,
 				01D96AB423D8E36A00D0D267 /* BoundsTests.swift */,
 				016FAB5F21BFE7CE00AF60DC /* CSGTests.swift */,
 				016FAB5C21BFE7CD00AF60DC /* PathTests.swift */,
@@ -280,9 +283,6 @@
 				52A3852D238D6E5700BE8407 /* LineTests.swift */,
 				01BA2969222726BD0088D36B /* XCTestManifests.swift */,
 				016FAB3921BFE78100AF60DC /* Info.plist */,
-				0A7FDEA5257B087B0046D8CA /* LineTests_.swift */,
-				0A7FDEA9257B0B5B0046D8CA /* PlaneTests_.swift */,
-				0A7FDEBB257D38F60046D8CA /* LineSegmentTests_.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
