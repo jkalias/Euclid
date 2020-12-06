@@ -58,4 +58,6 @@ class LineTests_: XCTestCase {
         XCTAssertEqual(0, distance, accuracy: epsilon)
         XCTAssertTrue(line.contains(point))
     }
+
+    func testIntersectionWithParallelLine() {}
 }

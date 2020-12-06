@@ -107,7 +107,7 @@ class PlaneTests_: XCTestCase {
     }
 
     func testIntersectionWithParallelPlane() {
-        XCTAssertNil(Plane_.xy.intersection(with: Plane_.xy.translate(by: Distance(z: 1))))
+        XCTAssertNil(Plane_.xy.intersection(with: Plane_.xy.translated(by: Distance(z: 1))))
     }
 
     func testIntersectWithPlaneResultsInXAxis() {

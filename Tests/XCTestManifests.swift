@@ -249,6 +249,7 @@ extension LineTests_ {
         ("testDistanceFromPoint", testDistanceFromPoint),
         ("testDistanceFromPointContained", testDistanceFromPointContained),
         ("testDistanceFromPointVerticalLine", testDistanceFromPointVerticalLine),
+        ("testIntersectionWithParallelLine", testIntersectionWithParallelLine),
     ]
 }
 

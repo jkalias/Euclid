@@ -35,9 +35,9 @@ public extension Plane_ {
 }
 
 public extension Plane_ {
-    func translate(by offset: Distance) -> Plane_ {
+    func translated(by offset: Distance) -> Plane_ {
         return Plane_(
-            point: point.translate(by: offset),
+            point: point.translated(by: offset),
             normal: normal
         )
     }

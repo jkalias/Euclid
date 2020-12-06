@@ -25,7 +25,7 @@ public extension Position {
 }
 
 public extension Position {
-    func translate(by offset: Distance) -> Position {
+    func translated(by offset: Distance) -> Position {
         return self + offset
     }
 

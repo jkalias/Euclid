@@ -22,6 +22,16 @@ public extension Line_ {
         let d = distance(to: other).norm
         return d < epsilon
     }
+
+    func translated(by offset: Distance) -> Line_ {
+        return Line_(point: point.translated(by: offset), direction: direction)
+    }
+}
+
+public extension Line_ {
+    func intersection(with _: Line_) -> Position? {
+        return nil
+    }
 }
 
 public extension Line_ {
