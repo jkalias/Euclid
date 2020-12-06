@@ -205,6 +205,28 @@ class CodingTests: XCTestCase {
         XCTAssertEqual(try encode(Plane(normal: Vector(0, 0, 1), w: 0)), "[0,0,1,0]")
     }
 
+    // MARK: Plane_
+
+    func testDecodingKeyedPlane_() {
+        XCTAssertEqual(try decode("""
+        {
+            "normal": [0, 0, 1],
+            "point": [1, 2, 3]
+        }
+        """), Plane_(point: Position(x: 1, y: 2, z: 3), normal: .z))
+    }
+
+    func testDecodingUnkeyedPlane_() {
+        XCTAssertEqual(
+            try decode("[1, 2, 3, 4, 5, 6]"),
+            Plane_(point: Position(x: 4, y: 5, z: 6), normal: Direction(x: 1, y: 2, z: 3))
+        )
+    }
+
+    func testEncodingPlane_() {
+        XCTAssertEqual(try encode(Plane_(point: Position(x: 1, y: 2, z: 3), normal: .z)), "[0,0,1,1,2,3]")
+    }
+
     // MARK: Polygon
 
     func testDecodingPolygon() {

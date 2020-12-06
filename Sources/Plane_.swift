@@ -10,7 +10,7 @@ import Foundation
 
 /// A plane described in its Hesse normal form
 /// https://en.wikipedia.org/wiki/Hesse_normal_form
-public struct Plane_: Hashable, Codable {
+public struct Plane_: Hashable {
     public let point: Position
     public let normal: Direction
 
@@ -25,6 +25,39 @@ public struct Plane_: Hashable, Codable {
         self.normal = isHesseNormalForm
             ? normal
             : normal.opposite
+    }
+}
+
+extension Plane_: Codable {
+    private enum CodingKeys: CodingKey {
+        case normal, point
+    }
+
+    public init(from decoder: Decoder) throws {
+        if var container = try? decoder.unkeyedContainer() {
+            let x = try container.decode(Double.self)
+            let y = try container.decode(Double.self)
+            let z = try container.decode(Double.self)
+            normal = Direction(x: x, y: y, z: z)
+            let px = try container.decode(Double.self)
+            let py = try container.decode(Double.self)
+            let pz = try container.decode(Double.self)
+            point = Position(x: px, y: py, z: pz)
+        } else {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            normal = try container.decode(Direction.self, forKey: .normal)
+            point = try container.decode(Position.self, forKey: .point)
+        }
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.unkeyedContainer()
+        try container.encode(normal.x)
+        try container.encode(normal.y)
+        try container.encode(normal.z)
+        try container.encode(point.x)
+        try container.encode(point.y)
+        try container.encode(point.z)
     }
 }
 
