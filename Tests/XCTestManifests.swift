@@ -246,8 +246,8 @@ extension LineTests_ {
     static let __allTests__LineTests_ = [
         ("testDistanceFromObliqueLine", testDistanceFromObliqueLine),
         ("testDistanceFromOrigin", testDistanceFromOrigin),
+        ("testDistanceFromPoint", testDistanceFromPoint),
         ("testDistanceFromPointContained", testDistanceFromPointContained),
-        ("testDistanceFromPointHorizontalLine", testDistanceFromPointHorizontalLine),
         ("testDistanceFromPointVerticalLine", testDistanceFromPointVerticalLine),
     ]
 }
@@ -324,9 +324,14 @@ extension PlaneTests_ {
         ("testDistanceYZPlane", testDistanceYZPlane),
         ("testHessNormalForm1", testHessNormalForm1),
         ("testHessNormalForm2", testHessNormalForm2),
+        ("testIntersectionWithParallelPlane", testIntersectionWithParallelPlane),
+        ("testIntersectionWithPlaneResultsInSkewedLine", testIntersectionWithPlaneResultsInSkewedLine),
         ("testIntersectionWithSkewedLine", testIntersectionWithSkewedLine),
         ("testIntersectWithNormalLine", testIntersectWithNormalLine),
         ("testIntersectWithParallelLine", testIntersectWithParallelLine),
+        ("testIntersectWithPlaneResultsInXAxis", testIntersectWithPlaneResultsInXAxis),
+        ("testIntersectWithPlaneResultsInYAxis", testIntersectWithPlaneResultsInYAxis),
+        ("testIntersectWithPlaneResultsInZAxis", testIntersectWithPlaneResultsInZAxis),
     ]
 }
 

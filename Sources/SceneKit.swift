@@ -411,8 +411,8 @@ public extension SCNGeometry {
     /// Creates a line-segment bounding-box SCNGeometry from a Bounds
     convenience init(_ bounds: Bounds) {
         var vertexData = Data()
-        for origin in bounds.corners {
-            vertexData.append(origin)
+        for point in bounds.corners {
+            vertexData.append(point)
         }
         let indices: [UInt32] = [
             // bottom

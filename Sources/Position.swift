@@ -25,6 +25,10 @@ public extension Position {
 }
 
 public extension Position {
+    func translate(by offset: Distance) -> Position {
+        return self + offset
+    }
+
     static func + (lhs: Position, rhs: Distance) -> Position {
         return Position(
             x: lhs.x + rhs.x,
@@ -47,5 +51,9 @@ public extension Position {
             y: lhs.y - rhs.y,
             z: lhs.z - rhs.z
         )
+    }
+
+    init(_ distance: Distance) {
+        self.init(x: distance.x, y: distance.y, z: distance.z)
     }
 }
