@@ -59,5 +59,29 @@ class LineTests_: XCTestCase {
         XCTAssertTrue(line.contains(point))
     }
 
-    func testIntersectionWithParallelLine() {}
+    func testIntersectionWithParallelLine() {
+        let line = Line_(point: .origin, direction: .x)
+        XCTAssertNil(line.intersection(with: line.translated(by: Distance(y: 1))))
+    }
+
+    func testIntersectionWithSelf() {
+        let line = Line_(point: .origin, direction: .x)
+        XCTAssertNil(line.intersection(with: line))
+    }
+
+    func testIntersectionNormalLinesWithSamePoint() {
+        XCTAssertEqual(.origin, Line_.x.intersection(with: .y))
+    }
+
+    func testIntersectionNormalLinesWithDifferentPoint() {
+        XCTAssertEqual(.origin, Line_.x.translated(by: Distance(x: 2)).intersection(with: .y))
+    }
+
+    func testIntersectionWithLine() {
+        let line1 = Line_(point: Position(y: 2), direction: .x)
+        let line2 = Line_(point: Position(x: 9, y: 3, z: 1), direction: Direction(x: 1, y: 1, z: 1))
+        let expected = Position(x: 8, y: 2)
+        let intersection = line1.intersection(with: line2)
+        XCTAssertEqual(expected, intersection)
+    }
 }

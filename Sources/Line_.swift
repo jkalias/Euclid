@@ -29,8 +29,42 @@ public extension Line_ {
 }
 
 public extension Line_ {
-    func intersection(with _: Line_) -> Position? {
-        return nil
+    static let x = Line_(point: .origin, direction: .x)
+    static let y = Line_(point: .origin, direction: .y)
+    static let z = Line_(point: .origin, direction: .z)
+}
+
+public extension Line_ {
+    func intersection(with line: Line_) -> Position? {
+        guard !direction.isColinear(to: line.direction) else {
+            // parallel lines, no intersection
+            return nil
+        }
+
+        let commonPlaneNormal = direction.cross(line.direction)
+        let commonPlane = Plane_(point: point, normal: commonPlaneNormal)
+
+        if !commonPlane.contains(line.point) {
+            // lines are skewed, no interesection
+            return nil
+        }
+
+        let plane1 = Plane_(
+            point: point,
+            normal: commonPlaneNormal.cross(direction)
+        )
+        let plane2 = Plane_(
+            point: line.point,
+            normal: commonPlaneNormal.cross(line.direction)
+        )
+        guard let planeIntersection = plane1.intersection(with: plane2) else {
+            // should never land here...
+            return nil
+        }
+
+        let intersection = commonPlane.intersection(with: planeIntersection)
+
+        return intersection
     }
 }
 
