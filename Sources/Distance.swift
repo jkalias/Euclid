@@ -99,10 +99,14 @@ public extension Distance {
 
 public extension Distance {
     func projection(on direction: Direction) -> Distance {
-        return norm * self.direction.dot(direction) * direction
+        return dot(direction) * direction
     }
 
     func normal(to direction: Direction) -> Distance {
         return self - projection(on: direction)
+    }
+
+    func dot(_ other: Direction) -> Double {
+        return norm * direction.dot(other)
     }
 }
