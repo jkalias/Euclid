@@ -15,10 +15,15 @@ public struct Direction: AdditiveArithmeticCartesianComponentsRepresentable {
 
     public init(x: Double = 0, y: Double = 0, z: Double = 0) {
         let componentsNorm = (x * x + y * y + z * z).squareRoot()
-        assert(componentsNorm > epsilon)
-        self.x = x / componentsNorm
-        self.y = y / componentsNorm
-        self.z = z / componentsNorm
+        if componentsNorm > epsilon {
+            self.x = x / componentsNorm
+            self.y = y / componentsNorm
+            self.z = z / componentsNorm
+        } else {
+            self.x = 0
+            self.y = 0
+            self.z = 0
+        }
     }
 }
 
