@@ -197,7 +197,6 @@ extension DirectionTests {
         ("testRotateAroundNonNormalDirection", testRotateAroundNonNormalDirection),
         ("testRotateXAxis", testRotateXAxis),
         ("testRotateYAxis", testRotateYAxis),
-        ("testZeroDirection", testZeroDirection),
     ]
 }
 
@@ -400,6 +399,7 @@ extension PositionTests {
         ("testConstructor", testConstructor),
         ("testDistanceFromPositions", testDistanceFromPositions),
         ("testNorm", testNorm),
+        ("testRotated", testRotated),
         ("testSubtractDistanceToPosition", testSubtractDistanceToPosition),
     ]
 }
